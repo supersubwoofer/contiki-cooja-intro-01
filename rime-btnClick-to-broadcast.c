@@ -76,8 +76,7 @@ PROCESS_THREAD(example_broadcast_process, ev, data)
     etimer_set(&et, CLOCK_SECOND * 4 + random_rand() % (CLOCK_SECOND * 4));
 
     PROCESS_WAIT_EVENT_UNTIL(
-	(ev==sensors_event) 
-	&& (data == &button_sensor) 
+	(ev==sensors_event) && (data == &button_sensor) 
 	&& etimer_expired(&et)
     );
 
